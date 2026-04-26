@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">Portfol<em>io</em></span>
+    </div>
+    <nav class="steps-nav">
+      <button class="step-btn active" data-section="0">01 &mdash; Identity</button>
+      <button class="step-btn" data-section="1">02 &mdash; Background</button>
+      <button class="step-btn" data-section="2">03 &mdash; Work</button>
+      <button class="step-btn" data-section="3">04 &mdash; Style</button>
+    </nav>
+    <div class="sidebar-footer">
+      <p>AI-powered<br/>portfolio generation</p>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="top-bar">
+      <h1 class="page-title">Build Your Portfolio</h1>
+      <p class="page-sub">Fill in your details — AI does the rest.</p>
+    </header>
+
+    <form id="portfolio-form" novalidate>
+
+      <!-- Section 0: Identity -->
+      <section class="form-section active" data-section="0">
+        <div class="section-label">Identity</div>
+        <div class="field-grid">
+          <div class="field full">
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="field full">
+            <label for="title">Professional Title <span class="req">*</span></label>
+            <input type="text" id="title" name="title" placeholder="Senior Software Engineer" required />
+          </div>
+          <div class="field half">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="field half">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="field half">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="New York, USA" />
+          </div>
+          <div class="field half">
+            <label for="linkedin">LinkedIn URL</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/jane" />
+          </div>
+          <div class="field half">
+            <label for="github">GitHub URL</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/janesmith" />
+          </div>
+          <div class="field half">
+            <label for="website">Website</label>
+            <input type="url" id="website" name="website" placeholder="https://janesmith.dev" />
+          </div>
+          <div class="field full">
+            <label for="summary">Personal Summary</label>
+            <textarea id="summary" name="summary" rows="3" placeholder="A short bio or personal statement about who you are and what drives you..."></textarea>
+          </div>
+        </div>
+        <div class="section-nav">
+          <div></div>
+          <button type="button" class="btn-next" data-next="1">Next →</button>
+        </div>
+      </section>
+
+      <!-- Section 1: Background -->
+      <section class="form-section" data-section="1">
+        <div class="section-label">Background</div>
+        <div class="field-grid">
+          <div class="field full">
+            <label for="education">Education <span class="req">*</span></label>
+            <textarea id="education" name="education" rows="4" placeholder="BSc Computer Science, MIT, 2018–2022&#10;Relevant courses: Algorithms, Systems Design, ML..." required></textarea>
+          </div>
+          <div class="field full">
+            <label for="skills">Skills <span class="req">*</span></label>
+            <textarea id="skills" name="skills" rows="3" placeholder="Python, TypeScript, React, Node.js, PostgreSQL, Docker, AWS, Figma..." required></textarea>
+            <span class="field-hint">Comma-separated list of technologies and skills</span>
+          </div>
+        </div>
+        <div class="section-nav">
+          <button type="button" class="btn-prev" data-prev="0">← Back</button>
+          <button type="button" class="btn-next" data-next="2">Next →</button>
+        </div>
+      </section>
+
+      <!-- Section 2: Work -->
+      <section class="form-section" data-section="2">
+        <div class="section-label">Work</div>
+        <div class="field-grid">
+          <div class="field full">
+            <label for="experience">Work Experience <span class="req">*</span></label>
+            <textarea id="experience" name="experience" rows="6" placeholder="Software Engineer at Acme Corp (2022–Present)&#10;- Built a real-time analytics dashboard used by 50k+ users&#10;- Reduced API latency by 40% by optimizing database queries&#10;&#10;Intern at StartupXYZ (2021)&#10;- Developed RESTful APIs with Node.js and Express..." required></textarea>
+          </div>
+          <div class="field full">
+            <label for="projects">Projects <span class="req">*</span></label>
+            <textarea id="projects" name="projects" rows="6" placeholder="OpenChat — Real-time chat app (React, Node, Socket.io)&#10;Built a scalable chat platform with 10k+ concurrent users. Features: rooms, DMs, file sharing.&#10;&#10;DataViz Studio — Data visualization tool&#10;Open-source tool for creating interactive charts from CSV data..." required></textarea>
+          </div>
+        </div>
+        <div class="section-nav">
+          <button type="button" class="btn-prev" data-prev="1">← Back</button>
+          <button type="button" class="btn-next" data-next="3">Next →</button>
+        </div>
+      </section>
+
+      <!-- Section 3: Style -->
+      <section class="form-section" data-section="3">
+        <div class="section-label">Style</div>
+        <div class="field-grid">
+          <div class="field full">
+            <label>Portfolio Style</label>
+            <div class="style-cards">
+              <label class="style-card active" data-style="modern">
+                <input type="radio" name="style" value="modern" checked hidden />
+                <div class="style-preview modern-prev"></div>
+                <div class="style-info">
+                  <strong>Modern</strong>
+                  <span>Dark hero, bold typography, card-based layout</span>
+                </div>
+              </label>
+              <label class="style-card" data-style="minimal">
+                <input type="radio" name="style" value="minimal" hidden />
+                <div class="style-preview minimal-prev"></div>
+                <div class="style-info">
+                  <strong>Minimal</strong>
+                  <span>Clean, whitespace-first, serif typography</span>
+                </div>
+              </label>
+              <label class="style-card" data-style="creative">
+                <input type="radio" name="style" value="creative" hidden />
+                <div class="style-preview creative-prev"></div>
+                <div class="style-info">
+                  <strong>Creative</strong>
+                  <span>Bold colors, expressive, asymmetric layout</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-nav">
+          <button type="button" class="btn-prev" data-prev="2">← Back</button>
+          <button type="submit" class="btn-generate" id="generate-btn">
+            <span class="btn-label">Generate Portfolio</span>
+            <span class="btn-icon">✦</span>
+          </button>
+        </div>
+      </section>
+
+    </form>
+
+    <!-- Loading State -->
+    <div class="loading-overlay" id="loading" hidden>
+      <div class="loading-inner">
+        <div class="spinner"></div>
+        <p class="loading-text">Crafting your portfolio<span class="dots"></span></p>
+        <p class="loading-sub">This may take 20–30 seconds</p>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div class="error-banner" id="error-banner" hidden>
+      <span id="error-text"></span>
+      <button onclick="document.getElementById('error-banner').hidden=true">✕</button>
+    </div>
+
+  </main>
+
+  <!-- Result Modal -->
+  <div class="result-overlay" id="result-overlay" hidden>
+    <div class="result-panel">
+      <div class="result-toolbar">
+        <span class="result-title">Your Portfolio is Ready</span>
+        <div class="result-actions">
+          <button class="action-btn" id="download-btn">↓ Download HTML</button>
+          <button class="action-btn" id="preview-btn">⊡ Preview</button>
+          <button class="action-btn close-btn" id="close-result">✕ Close</button>
+        </div>
+      </div>
+      <iframe id="preview-frame" class="preview-frame"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
