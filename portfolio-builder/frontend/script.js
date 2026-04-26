@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://ryugen22-portfolio-backend.hf.space";
 
 // ===== SECTION NAVIGATION =====
 let currentSection = 0;
